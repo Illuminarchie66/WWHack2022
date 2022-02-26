@@ -41,11 +41,11 @@ def getSnippet(stream, p):
     file.writeframes(b''.join(frames))
     return file
 
-def transcribeFile(filename):
+def transcribeFile(filecontents):
     # endpoint = "https://api.assemblyai.com/v2/transcript"
     #filename = 'Recording_3.mp4'
-    file = open(filename, 'rb')
-    data = file.read(10000000)
+    #file = open(filename, 'rb')
+    data = filecontents
 
     headers = {'authorization': "1fb21cd48fdd4de79c3e7f9e454afb0c"}
     response = requests.post('https://api.assemblyai.com/v2/upload',
@@ -93,6 +93,7 @@ def transcribeFile(filename):
             c = c+1
 
     print(transcript)
+    return transcript
     # json = {
     # "audio_url": "https://bit.ly/3yxKEIY"
     # }
