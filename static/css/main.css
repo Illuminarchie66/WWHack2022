@@ -1,0 +1,44 @@
+ul.links {
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+li a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: #111;
+}
+.maintext{
+  font-size: x-large;
+  text-align: center;
+  background-color: blanchedalmond;
+  margin-right: 300px;
+  margin-left: 300px;
+}
+.uncanny{
+  position: absolute;
+  top: 51px;
+  right: 30px;
+  width: 120px;
+}
+.logo{
+  position: absolute;
+  top: 13px;
+  left: -10px;
+  width: 200px;
+}
+body{
+  background-color: whitesmoke;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+  
