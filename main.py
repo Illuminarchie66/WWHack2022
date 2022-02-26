@@ -41,9 +41,9 @@ def getSnippet(stream, p):
     file.writeframes(b''.join(frames))
     return file
 
-def transcribeFile(file):
+def transcribeFile(filename):
     # endpoint = "https://api.assemblyai.com/v2/transcript"
-    filename = 'Recording_3.mp4'
+    #filename = 'Recording_3.mp4'
     file = open(filename, 'rb')
     data = file.read(10000000)
 
@@ -112,7 +112,6 @@ def beginStream():
     return stream, p
 
 
-if __name__ == '__main__':
-    stream,p = beginStream()
+    #stream,p = beginStream()
     # streamToAPI(stream)
-    transcribeFile(getSnippet(stream,p))
+#    transcribeFile()
