@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import Flask, render_template     
 from flask import Flask, flash, request, redirect, url_for
+import main.py as transcriber
 app = Flask(__name__)
 
 @app.route("/")
@@ -14,10 +15,11 @@ def record():
         if "file" not in request.files:
             return redirect(request.url) # we need a resubmission, go back
         file = request.files["file"]
-        if file.filename == "":
+        else if file.filename == "":
             return redirect(request.url) # we need a resubmission, go back
-
-    return render_template("record.html", audio=file)
+        else:
+            text = transcriber.transcribeFile(file)
+    return render_template("record.html", text=file)
 
 if __name__ == "__main__":
     app.run()
