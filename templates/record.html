@@ -12,11 +12,17 @@
                 <li><a href="">Find Films</a></li>
               </ul> 
         </div>
-        <div class="maintext"> 
-            <h1>What's That Movie?</h1>
-            <p>This website will allow you to input a movie qote with your microphone, then the most relevant movies will be shown.</p>
-            <p>Never again will you know a line from a movie, but just not remember which one! HOW EPIC?!?!</p>
-            <p>Use the navigation bar above to access the website.</p>
+        <div class="fileSubmit">
+            <h1>{{ text }}</h1>
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="file"/>
+                <br>
+                <input type="submit" value="Find That Film!"/>
+            </form>
         </div>
+        <audio controls>
+            <source src= {{ audio }} type="audio/">
+          Your browser does not support the audio element.
+          </audio>
     </body>
 </html>
