@@ -15,23 +15,23 @@ def QuoteToMovie(quote):
     url = createLink(quote)
     webdriver = webdriver.Chrome()
     webdriver.get(url)
-    time.sleep(0.002)
+    time.sleep(0.0001)
 
-    html = BeautifulSoup(webdriver.page_source,'html.parser')
+    html = BeautifulSoup(webdriver.page_source, 'html.parser')
     webdriver.close()
     results = html.find(id="results_table")
 
-    if html == None or results == None:
-        return []
-
     times = html.findAll(class_="editable editable-click editable-empty editable-open time")
-    rows = results.findAll(lambda tag: tag.name=='tr')
+    rows = results.findAll(lambda tag: tag.name == 'tr')
 
     arr = []
-    for i in range(0, int(len(rows)/2)):
-        arr.append([rows[i*2]['data-title'], times[i].getText()])
+    for i in range(0, int(len(rows) / 2)):
+        arr.append([rows[i * 2]['data-title'], times[i].getText()])
 
     return arr
+
+
+print(QuoteToMovie("The return of the king"))
 
 
 

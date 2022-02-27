@@ -13,16 +13,13 @@
               </ul> 
         </div>
         <div class="fileSubmit">
-            <h1>{{ text }}</h1>
+            <h1>Your Quote: {{ quote }}</h1>
+            <h1>Your Film: {{ film }}</h1>
             <form method="POST" enctype="multipart/form-data">
                 <input type="file" name="file"/>
                 <br>
                 <input type="submit" value="Find That Film!"/>
             </form>
         </div>
-        <audio controls>
-            <source src= {{ audio }} type="audio/">
-          Your browser does not support the audio element.
-          </audio>
     </body>
 </html>
