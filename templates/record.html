@@ -7,19 +7,29 @@
     <body>
         <div class="header">
             <ul class="links">
-                <li><a href="">Home Page</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Find Films</a></li>
+                <li><a href="/">Home Page</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/record">Find Films</a></li>
               </ul> 
         </div>
         <div class="fileSubmit">
             <h1>Your Quote: {{ quote }}</h1>
-            <h1>Your Film: {{ film }}</h1>
+            <h1>Your Film: {{ film }}.  It was said at: {{ time }}</h1>
             <form method="POST" enctype="multipart/form-data">
                 <input type="file" name="file"/>
                 <br>
                 <input type="submit" value="Find That Film!"/>
             </form>
+            {% if allFilms|length > 1 %}
+                <h1>Full List of Films: </h1>
+                <!-- <div style="overflow:scroll;padding:5px;"> -->
+                {% for pair in allFilms %}
+                    <ul>
+                        <li>Film: {{ pair[0] }}. Time Stamp: {{ pair[1] }}</li>
+                    </ul>
+                {% endfor %}
+                <!-- </div>    -->
+            {% endif %}
         </div>
     </body>
 </html>
