@@ -1,9 +1,6 @@
 # This is a sample Python script.
 import base64
 import time
-
-import pyaudio
-import websockets
 import json
 import asyncio
 import wave
@@ -11,7 +8,6 @@ import requests
 import json
 # import configure
 FRAMES_PER_BUFFER = 3200
-FORMAT = pyaudio.paInt16
 CHANNELS = 1
 # CHUNK = 1024
 RATE = 16000
@@ -25,21 +21,6 @@ auth_key = "1fb21cd48fdd4de79c3e7f9e454afb0c"
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
-def getSnippet(stream, p):
-    frames = []
-    filename = 'snippet.wav'
-
-    for i in range(0, int(RATE/FRAMES_PER_BUFFER * DURATION)):
-        frames.append(stream.read(FRAMES_PER_BUFFER))
-    stream.stop_stream()
-
-    file = wave.open(filename, 'wb')
-    file.setnchannels(CHANNELS)
-    file.setsampwidth(p.get_sample_size(FORMAT))
-    file.setframerate(FRAMES_PER_BUFFER)
-
-    file.writeframes(b''.join(frames))
-    return file
 
 def transcribeFile(filecontents):
     # endpoint = "https://api.assemblyai.com/v2/transcript"
@@ -94,25 +75,4 @@ def transcribeFile(filecontents):
 
     print(transcript)
     return transcript
-    # json = {
-    # "audio_url": "https://bit.ly/3yxKEIY"
-    # }
 
-def beginStream():
-    p = pyaudio.PyAudio()
-
-    # starts recording
-    stream = p.open(
-        format=FORMAT,
-        channels=CHANNELS,
-        rate=RATE,
-        input=True,
-        frames_per_buffer=FRAMES_PER_BUFFER,
-    )
-
-    return stream, p
-
-
-    #stream,p = beginStream()
-    # streamToAPI(stream)
-#    transcribeFile()
