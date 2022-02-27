@@ -13,7 +13,9 @@ The libraries and APIs used are:
 - AssemblyAI
 
 Currently the delegation of work has been broken down like so:
-- Front end, interface andd aquiring the audio file: Pavel Skerbakovs
-- Audio file to plain text transcription: Ivan Kudryavtsev
-- Webscraping for the quotes and associated movies: Archie Harrodine
-- Installation and upload: Icen Zeyada
+- Front end, interface andd aquiring the audio file: Pavel Skerbakovs (Materol#6825)
+- Audio file to plain text transcription: Ivan Kudryavtsev (Rexonance#6691)
+- Webscraping for the quotes and associated movies: Archie Harrodine (Illuminarchie#8292)
+- Installation and upload: Icen Zeyada (Icen#4060)
+
+Instructions to run:
