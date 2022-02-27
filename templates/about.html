@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="static/css/main.css" type="text/css" charset="utf-8">
+        <title>What's That Movie?</title>
+    </head>
+    <body>
+        <div class="header">
+            <ul class="links">
+                <li><a href="/">Home Page</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/record">Find Films</a></li>
+              </ul> 
+        </div>
+        <div class="maintext"> 
+            <h1>Why This Project?</h1>
+            <p>We wanted to utilise voice recogntion software in a cool way. So we put our minds together to
+            make something plausible with our lack of experience in the day while also having some trivial
+            functionality. So we drifted towards finding tings with clips, in a way like Shazam. Movies
+            struck us as an idea.</p>
+            <br>
+            <p>First we considered the platform to present the project. As an app or a website etc.? We decided
+            a website was a perfect fit, since it allows easy access for anyone, an easy display and no downlaods
+            for the user (when the server is hosted anyways). Plus, the code searches the internet, so it felt right.</p>
+            <br>
+            <p>Then for the voice recogntion, we utilised AssemblyAI. We were interested in doing real time recording and
+            transcribing, however there were issues with getting the premium version that we could not resolve.
+            So, instead we decided to have a file upload instead. A voice clip would get uploaded and then passed through
+            to be transcribed into text.</p>
+            <br>
+            <p>We then had to consider how to acquire the movies that the quote is involved with. For this, we decided to 
+            web scrape on 'quodb.com', a website database of quotes and matching films. We utilised selenium and beautifulsoup
+            to accomplish this. We investigated the website and set up the automation to get through it.</p>
+            <br>
+            <p>With the main features complete, we combined them together. The file input on the website was passed into the
+            transcriber function, outputting a quote string. This was then passed into the function for web scraping and the
+            returned array of films to be returned to the user on the website!</p>
+            <br>
+            <p>Thank you for using and happy film hunting!</p>
+        </div>
+    </body>
+</html>
